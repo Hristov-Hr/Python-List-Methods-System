@@ -59,17 +59,27 @@ def handle_pop(lst):
 
 
 def handle_clear(lst):
-    # TODO: Use the clear() method to remove all items from the list
-    # Print the updated list
-    pass
+
+    answer = input("Please enter 'Yes' if realy want to clear the list:")
+    if answer.lower() == 'yes':
+        lst.clear()
+    return print(lst)
 
 
 def handle_index(lst):
-    # TODO: Prompt the user for a value to find its index
-    # Use the index() method to find the index of the value
-    # Handle the case where the value is not found in the list
-    # Print the index of the value
-    pass
+
+    search_for_value = input('Enter the value:')
+    if search_for_value in lst:
+        return print(lst.index(search_for_value))
+    if search_for_value.isdigit() is True:
+        if int(search_for_value) in lst:
+            return print(lst.index(int(search_for_value)))
+        elif float(search_for_value) in lst:
+            return print(lst.index(float(search_for_value)))
+        else:
+            return print('Invalid value')
+    else:
+        return print('Invalid value')
 
 
 def handle_count(lst):
