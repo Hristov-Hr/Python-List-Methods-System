@@ -47,9 +47,9 @@ def handle_remove(lst):
 
 def handle_pop(lst):
 
-    index_to_pop = input("Enter an index to pop or leave empty to pop last item:")
-    if index_to_pop.isdigit() and int(index_to_pop) in range(lst):
-        lst.pop(int(index_to_pop))
+    index_to_pop = int(input("Enter an index to pop or leave empty to pop last item:"))
+    if index_to_pop < len(lst):
+        lst.pop(index_to_pop)
     else:
         lst.pop()
 
