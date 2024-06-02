@@ -36,11 +36,18 @@ def handle_insert(lst):
 
 
 def handle_remove(lst):
-    # TODO: Prompt the user for a value to remove from the list
-    # Use the remove() method to delete the first occurrence of the value
-    # Handle the case where the value is not found in the list
-    # Print the updated list
-    pass
+
+    value_for_remove = input('Enter a value to remove:')
+    if value_for_remove in lst:
+        lst.remove(value_for_remove)
+    elif value_for_remove.isdigit() is True:
+        if int(value_for_remove) in lst:
+            lst.remove(int(value_for_remove))
+        elif float(value_for_remove) in lst:
+            lst.remove(float(value_for_remove))
+    else:
+        print('Invalid value!')
+    return print(lst)
 
 
 def handle_pop(lst):
