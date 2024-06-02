@@ -40,22 +40,20 @@ def handle_remove(lst):
     value_for_remove = input('Enter a value to remove:')
     if value_for_remove in lst:
         lst.remove(value_for_remove)
-    elif value_for_remove.isdigit() is True:
-        if int(value_for_remove) in lst:
-            lst.remove(int(value_for_remove))
-        elif float(value_for_remove) in lst:
-            lst.remove(float(value_for_remove))
     else:
         print('Invalid value!')
     return print(lst)
 
 
 def handle_pop(lst):
-    # TODO: Prompt the user for an index to pop (optional, leave empty to pop last item)
-    # Use the pop() method to remove the item at the specified index or the last item if no index is provided
-    # Handle the case where the index is out of range
-    # Print the updated list
-    pass
+
+    index_to_pop = input("Enter an index to pop or leave empty to pop last item:")
+    if index_to_pop.isdigit() and int(index_to_pop) in range(lst):
+        lst.pop(int(index_to_pop))
+    else:
+        lst.pop()
+
+    return print(lst)
 
 
 def handle_clear(lst):
@@ -71,15 +69,8 @@ def handle_index(lst):
     search_for_value = input('Enter the value:')
     if search_for_value in lst:
         return print(lst.index(search_for_value))
-    if search_for_value.isdigit() is True:
-        if int(search_for_value) in lst:
-            return print(lst.index(int(search_for_value)))
-        elif float(search_for_value) in lst:
-            return print(lst.index(float(search_for_value)))
-        else:
-            return print('Invalid value')
     else:
-        return print('Invalid value')
+        return print('The value was not found.')
 
 
 def handle_count(lst):
