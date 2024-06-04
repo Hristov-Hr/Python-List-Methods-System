@@ -74,10 +74,9 @@ def handle_index(lst):
 
 
 def handle_count(lst):
-    # TODO: Prompt the user for a value to count its occurrences in the list
-    # Use the count() method to count how many times the value appears in the list
-    # Print the count of the value
-    pass
+
+    value = input('Enter a value to count:')
+    return print(lst.count(value))
 
 
 def handle_sort(lst):
